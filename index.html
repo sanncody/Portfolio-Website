@@ -103,6 +103,24 @@
         </div>
         <div class="row gy-4">
 
+          <!-- FluxusForge -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom rounded-4 bg-base shadow-effect">
+              <div class="card-custom-content p-4">
+                <h4>Software Engineer (MERN Stack) — Fluxusforge Pvt. Ltd.</h4>
+                <p><strong>Jan 2026 – Present | On-site</strong></p>
+                <p><em>Product: <strong>Quikkred</strong> — NBFC Loan Origination & Collection Platform</em></p>
+                <ul class="ps-3">
+                  <li>Developed and maintained backend APIs using <strong>Node.js, Express.js, MongoDB</strong>, and <strong>Fastify</strong>.</li>
+                  <li>Worked on loan collection CRM modules, financial products and partner onboarding workflows.</li>
+                  <li>Built <strong>Python automation scripts</strong> for bulk legal notice generation, eSign processing, and email delivery systems.</li>
+                  <li>Worked on <strong>Metabase reporting</strong> and collection analytics (DPD, outstanding, payment metrics).</li>
+                  <li>Collaborated with frontend and product teams for end-to-end feature integration and testing.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <!-- Revispy -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card-custom rounded-4 bg-base shadow-effect">
@@ -206,6 +224,14 @@
           <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="skills p-4 bg-base rounded-4 shadow-effect">
               <div class="iconbox rounded-4">
+                <i class="las la-bolt"></i>
+              </div>
+              <h4 class="mt-4 mb-2">Fastify</h4>
+            </div>
+          </div>
+          <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="skills p-4 bg-base rounded-4 shadow-effect">
+              <div class="iconbox rounded-4">
                 <i class="las la-object-group"></i>
               </div>
               <h4 class="mt-4 mb-2">MongoDB</h4>
@@ -237,6 +263,14 @@
               </div>
               <h4 class="mt-4 mb-2">Drizzle ORM</h4>
               <!-- <p>&#9733 &#9733 &#9733 &#9733 &#9734</p> -->
+            </div>
+          </div>
+          <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="skills p-4 bg-base rounded-4 shadow-effect">
+              <div class="iconbox rounded-4">
+                <i class="las la-database"></i>
+              </div>
+              <h4 class="mt-4 mb-2">Prisma ORM</h4>
             </div>
           </div>
           <div class="col-md-4 mt-2 mb-4" data-aos="fade-up" data-aos-delay="600">
@@ -431,24 +465,35 @@
           <div class="col-lg-8 pb-4" data-aos="fade-up">
             <h6 class="text-brand">CONTACT</h6>
             <h1>Let's talk</h1>
+            <p class="text-muted mt-2">Have a project in mind or just want to say hi? Drop a message below.</p>
           </div>
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-            <form name="contact-us" class="row g-lg-3 gy-3">
+
+            <!-- Inline feedback toast -->
+            <div id="form-toast" class="d-none mb-4 p-3 rounded-4 text-start" role="alert"></div>
+
+            <form name="contact-us" id="contact-form" class="row g-lg-3 gy-3" novalidate>
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+                <input type="text" name="name" id="input-name" class="form-control" placeholder="Your name" required>
+                <div class="invalid-feedback text-start">Please enter your name.</div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                <input type="email" name="email" id="input-email" class="form-control" placeholder="Your email" required>
+                <div class="invalid-feedback text-start">Please enter a valid email.</div>
               </div>
               <div class="form-group col-md-12">
-                <input type="text" name="subject" class="form-control" placeholder="Enter subject" required>
+                <input type="text" name="subject" id="input-subject" class="form-control" placeholder="Subject" required>
+                <div class="invalid-feedback text-start">Please enter a subject.</div>
               </div>
               <div class="form-group col-md-12">
-                <textarea name="message" rows="4" class="form-control" placeholder="Enter Your message"
-                  required></textarea>
+                <textarea name="message" id="input-message" rows="5" class="form-control" placeholder="Your message..." required></textarea>
+                <div class="invalid-feedback text-start">Please enter a message.</div>
               </div>
               <div class="form-group col-md-12 d-grid">
-                <button type="submit" class="btn btn-brand">Contact me</button>
+                <button type="submit" id="submit-btn" class="btn btn-brand d-flex align-items-center justify-content-center gap-2">
+                  <span id="btn-text">Send Message</span>
+                  <span id="btn-spinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
               </div>
             </form>
 
@@ -482,32 +527,51 @@
   </div>
   <!--//CONTENT WRAPPER-->
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw7euzbq0QBT3gQkpdTwOTfhyd7gWz9KdySS_y2EgljTCzRV155N_uJNCPNYBEwgkMgGg/exec'
-    const form = document.forms['contact-us'];
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw7euzbq0QBT3gQkpdTwOTfhyd7gWz9KdySS_y2EgljTCzRV155N_uJNCPNYBEwgkMgGg/exec';
+    const form = document.getElementById('contact-form');
+    const toast = document.getElementById('form-toast');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+
+    function showToast(message, type) {
+      toast.className = 'mb-4 p-3 rounded-4 text-start fw-semibold';
+      if (type === 'success') {
+        toast.style.cssText = 'background:#1a7a4a;color:#ffffff;border:none;';
+      } else {
+        toast.style.cssText = 'background:#c0392b;color:#ffffff;border:none;';
+      }
+      toast.innerHTML = message;
+      toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      setTimeout(() => { toast.classList.add('d-none'); toast.style.cssText = ''; }, 6000);
+    }
+
+    function setLoading(loading) {
+      submitBtn.disabled = loading;
+      btnText.textContent = loading ? 'Sending...' : 'Send Message';
+      btnSpinner.classList.toggle('d-none', !loading);
+    }
 
     form.addEventListener('submit', e => {
       e.preventDefault();
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+      form.classList.remove('was-validated');
+      setLoading(true);
 
-      const btn = form.querySelector('button');
-      btn.disabled = true;
-      btn.innerText = "Sending...";
-
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => {
-          if (response.ok) {
-            alert("✅ Message sent successfully!");
-            form.reset();
-          } else {
-            alert("⚠️ Something went wrong. Please check your sheet or script URL.");
-          }
+      fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+        .then(() => {
+          showToast('&#10003; Message sent! I\'ll get back to you soon.', 'success');
+          form.reset();
         })
         .catch(error => {
           console.error('Error!', error.message);
-          alert("❌ Network or script error: " + error.message);
+          showToast('&#10007; Something went wrong. Please email me directly at <a href="mailto:sandeepwadhawan2001@gmail.com" class="text-danger fw-bold">sandeepwadhawan2001@gmail.com</a>', 'error');
         })
         .finally(() => {
-          btn.disabled = false;
-          btn.innerText = "Contact me";
+          setLoading(false);
         });
     });
   </script>
