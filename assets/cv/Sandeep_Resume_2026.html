@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sandeep Wadhawan - Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 9.6pt;
+      color: #000;
+      background: #fff;
+      line-height: 1.3;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 10mm 15mm 8mm 15mm;
+    }
+
+    /* ── Header ── */
+    .name {
+      text-align: center;
+      font-size: 20pt;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 9pt;
+      margin-bottom: 7px;
+    }
+
+    .contact a { color: #5B5BD6; text-decoration: none; }
+
+    /* ── Section headers ── */
+    .section-title {
+      font-variant: small-caps;
+      font-size: 10pt;
+      color: #8B3A3A;
+      letter-spacing: 0.4px;
+      margin-top: 6px;
+      margin-bottom: 1px;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid #bbb;
+      margin-bottom: 4px;
+    }
+
+    /* ── Objective ── */
+    .objective { font-size: 9.4pt; line-height: 1.36; }
+
+    /* ── Skills ── */
+    .skills-table { width: 100%; border-collapse: collapse; font-size: 9.4pt; }
+    .skills-table td { padding: 0.8px 0; vertical-align: top; }
+    .skills-table td:first-child { font-weight: bold; width: 37%; padding-right: 6px; }
+
+    /* ── Education ── */
+    .edu-entry { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; }
+    .edu-entry .left .school { font-weight: bold; font-size: 9.6pt; }
+    .edu-entry .left .degree { font-size: 9.4pt; }
+    .edu-entry .right { font-size: 9.4pt; white-space: nowrap; padding-left: 8px; }
+
+    /* ── Experience ── */
+    .exp-entry { margin-bottom: 5px; }
+
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .exp-header .title { font-weight: bold; font-size: 9.8pt; }
+    .exp-header .date { font-size: 9.4pt; white-space: nowrap; padding-left: 8px; }
+
+    .tech-stack { font-size: 8.9pt; margin: 1px 0 2px 0; }
+    .tech-stack b { font-weight: bold; }
+
+    ul.bullets { margin-left: 12px; font-size: 9.2pt; line-height: 1.36; }
+    ul.bullets li { margin-bottom: 1px; }
+
+    /* ── Certifications ── */
+    ul.certs { margin-left: 12px; font-size: 9.4pt; line-height: 1.42; }
+    ul.certs li { margin-bottom: 0; }
+
+    /* ── Projects ── */
+    .proj-entry { margin-bottom: 5px; }
+    .proj-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .proj-header .proj-title { font-weight: bold; font-size: 9.8pt; }
+    .proj-header .proj-date { font-size: 9.4pt; white-space: nowrap; padding-left: 8px; }
+    .proj-header a { color: inherit; text-decoration: none; }
+    .proj-header a:hover { text-decoration: underline; }
+    .proj-header a.icon-link:hover { text-decoration: none; }
+
+    a { color: #5B5BD6; text-decoration: none; }
+
+    /* Ensure emoji icon links have a real bounding box for PDF embedding */
+    a.icon-link { display: inline-block; padding: 0 3px; font-size: 10pt; }
+
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { margin: 0; padding: 10mm 15mm 8mm 15mm; }
+      a, a:visited { color: #5B5BD6 !important; text-decoration: underline !important; }
+      a.icon-link { text-decoration: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Header ── -->
+  <div class="name">Sandeep Wadhawan</div>
+  <div class="contact">
+    +91 7011054012 &nbsp;|&nbsp;
+    <a href="mailto:sandeepwadhawan2001@gmail.com">Email</a> &nbsp;|&nbsp;
+    <a href="https://sanncody.github.io/Portfolio-Website/" target="_blank">Portfolio</a> &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/sandeep-wadhawan-1055a1195/" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
+    <a href="https://github.com/sanncody" target="_blank">GitHub</a>
+  </div>
+
+  <!-- ── Objective ── -->
+  <div class="section-title">Objective</div>
+  <hr class="divider">
+  <p class="objective">As a backend-focused developer with 1.5+ years of professional experience, I enjoy designing clean architectures and creating reliable APIs. I've worked across the JavaScript/TypeScript ecosystem, using tools like Node.js, Express.js, React, and MongoDB.</p>
+
+  <!-- ── Skills ── -->
+  <div class="section-title">Skills and Interests</div>
+  <hr class="divider">
+  <table class="skills-table">
+    <tr>
+      <td><b>Backend Technologies</b></td>
+      <td>Node.js, Express.js, Fastify, tRPC, EJS</td>
+    </tr>
+    <tr>
+      <td><b>Frontend Technologies</b></td>
+      <td>HTML, CSS, Javascript, Typescript, TailwindCSS, React.js</td>
+    </tr>
+    <tr>
+      <td><b>Database</b></td>
+      <td>MongoDB, PostgreSQL, DrizzleORM, PrismaORM</td>
+    </tr>
+    <tr>
+      <td><b>Caching</b></td>
+      <td>Redis</td>
+    </tr>
+    <tr>
+      <td><b>Version Control System</b></td>
+      <td>Git, GitHub</td>
+    </tr>
+    <tr>
+      <td><b>Developer Tools</b></td>
+      <td>Postman, Cursor, VS Code</td>
+    </tr>
+  </table>
+
+  <!-- ── Education ── -->
+  <div class="section-title">Education</div>
+  <hr class="divider">
+  <div class="edu-entry">
+    <div class="left">
+      <div class="school">BVICAM, Guru Gobind Singh Indraprastha University</div>
+      <div class="degree">Master of Computer Applications</div>
+    </div>
+    <div class="right">Sept 2022 - June 2024</div>
+  </div>
+  <div class="edu-entry">
+    <div class="left">
+      <div class="school">Rajdhani College, University of Delhi</div>
+      <div class="degree">B.Sc. Mathematics (Hons)</div>
+    </div>
+    <div class="right">July 2019 – May 2022</div>
+  </div>
+
+  <!-- ── Experience ── -->
+  <div class="section-title">Experience</div>
+  <hr class="divider">
+
+  <!-- FluxusForge -->
+  <div class="exp-entry">
+    <div class="exp-header">
+      <div class="title">Backend Developer | Fluxusforge Pvt. Ltd.</div>
+      <div class="date">Jan 2026 – Present</div>
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Node.js | Express.js | Fastify | MongoDB | Python</div>
+    <ul class="bullets">
+      <li>Developed and maintained REST APIs using Node.js, Fastify, and MongoDB for <b>Quikkred</b> — an NBFC Loan Origination &amp; Collection Platform.</li>
+      <li>Built loan collection CRM modules, partner onboarding workflows, and payment flows with <b>Aadhaar/face verification</b> and <b>eSign integrations</b>.</li>
+      <li>Automated bulk legal notice generation and eSign processing via <b>Python scripts</b>; built Metabase dashboards for collection analytics (DPD, outstanding, payment metrics).</li>
+    </ul>
+  </div>
+
+  <!-- Revispy -->
+  <div class="exp-entry">
+    <div class="exp-header">
+      <div class="title">Backend Engineer | Revispy
+        ( <a href="https://drive.google.com/file/d/1y_gSesBcQviMwSr2yo2h6eJJ4USIcZpm/view?usp=sharing" target="_blank">Intern</a>
+        | <a href="https://drive.google.com/file/d/1ZuJ2_nkMkZEYSTfqc8pXzP9uowJ8pctr/view?usp=drive_link" target="_blank">SDE</a> )
+      </div>
+      <div class="date">Nov 2024 - Oct 2025</div>
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> TypeScript | Node.js | tRPC | Drizzle ORM | PostgreSQL | Next.js | zod | NeonDB</div>
+    <ul class="bullets">
+      <li>Developed scalable backend APIs using tRPC and Drizzle ORM, solving data-fetching inconsistencies and enabling seamless integration between frontend and database.</li>
+      <li>Contributed to AI-powered features like <b>AI Timeline</b> and <b>AI Insights</b> that analyzed user reviews to provide real-time trends, improving product transparency and decision-making for users.</li>
+      <li>Implemented secure authentication, optimized database queries, and enhanced performance, helping Revispy establish a reliable and insightful trust layer for online reviews.</li>
+    </ul>
+  </div>
+
+  <!-- Kirabiz -->
+  <div class="exp-entry">
+    <div class="exp-header">
+      <div class="title">Full Stack Developer - Intern | Kirabiz Technologies
+        ( <a href="https://drive.google.com/file/d/1ictnrmXsvpOCtWp0E6a6Qaf-kvJKsr2M/view?usp=drive_link" target="_blank">Intern</a> )
+      </div>
+      <div class="date">Feb 2024 - Aug 2024</div>
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> React | Node.js | Express.js | MongoDB</div>
+    <ul class="bullets">
+      <li>Post-Burst is a dynamic social media web application allowing users to create profiles, make posts, and engage with content through likes and interactions.</li>
+      <li>Built RESTful APIs using Node.js and Express to manage user authentication via Google OAuth, post creation, and engagement, solving data handling inefficiencies between client and server.</li>
+      <li>Integrated MongoDB for scalable data storage and React-Redux for state driven UI updates, ensuring smooth performance and real-time interaction.</li>
+    </ul>
+  </div>
+
+  <!-- ── Certifications ── -->
+  <div class="section-title">Certifications</div>
+  <hr class="divider">
+  <ul class="certs">
+    <li><b>Sheryians Coding School</b> (Full Stack Cohort Certification) <a class="icon-link" href="https://drive.google.com/file/d/126ztWLkIoz2P0K3ePUr32TgReqHoOZFt/view?usp=drive_link" target="_blank">🔗</a></li>
+    <li><b>Scaler</b> (Node.js Certification) <a class="icon-link" href="https://drive.google.com/file/d/1j26BqMOwKrFJGSBIYZNhrVQJXNNLkXBq/view?usp=drive_link" target="_blank">🔗</a></li>
+    <li><b>HackerRank</b> (SQL Basic) <a class="icon-link" href="https://www.hackerrank.com/certificates/a025b7bdc81d" target="_blank">🔗</a></li>
+  </ul>
+
+  <!-- ── Projects ── -->
+  <div class="section-title">Projects</div>
+  <hr class="divider">
+
+  <!-- Sannsta -->
+  <div class="proj-entry">
+    <div class="proj-header">
+      <div class="proj-title">Sannsta – A Social Media Web Application <a class="icon-link" href="https://sannsta.onrender.com" target="_blank">🔗</a></div>
+      <div class="proj-date">Oct 2025</div>
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> EJS | TailwindCSS | Node.js | Express.js | MongoDB | Passport.js | Multer</div>
+    <ul class="bullets">
+      <li>Developed a dynamic social media platform enabling users to create posts, upload stories, and engage through likes and saves — managing real-time media interactions efficiently.</li>
+      <li>Implemented secure authentication with Passport.js and image uploads via Multer; built a responsive UI with EJS and TailwindCSS ensuring smooth cross-device experience.</li>
+    </ul>
+  </div>
+
+  <!-- Talk-A-Tive -->
+  <div class="proj-entry">
+    <div class="proj-header">
+      <div class="proj-title">Talk-A-Tive: A Real Time Chat Application <a class="icon-link" href="https://chat-burst.onrender.com" target="_blank">🔗</a></div>
+      <div class="proj-date">May 2024 – July 2024</div>
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> ReactJS | MongoDB | NodeJS | ExpressJS | Socket.io</div>
+    <ul class="bullets">
+      <li>Built a scalable real-time chat application supporting individual and group rooms with live typing indicators and notifications using Socket.io.</li>
+      <li>Implemented user management features (add/remove users, rename groups) and real-time messaging, making the platform versatile and interactive.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
